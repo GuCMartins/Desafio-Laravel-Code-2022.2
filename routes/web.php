@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +33,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::get('/dale', function() {
     return view('dale');
 });
+
+Route::get('/usuarios', [UserController::class,'index'])->name('users.index');
+Route::get('/usuarios/create', [UserController::class,'create'])->name('users.create');
+Route::get('/usuarios/{user}/edit', [UserController::class,'edit'])->name('users.edit');
+Route::get('/usuarios/{user}/show', [UserController::class,'show'])->name('users.show');
+Route::post('/usuarios', [UserController::class,'store'])->name('users.strore');
+Route::put('/usuarios/{user}', [UserController::class,'update'])->name('users.update');
+Route::delete('/usuarios/{user}', [UserController::class,'destroy'])->name('users.destroy');
 
 require __DIR__.'/auth.php';
