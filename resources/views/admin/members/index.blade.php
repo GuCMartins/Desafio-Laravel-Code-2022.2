@@ -1,16 +1,15 @@
 @extends('layouts.master')
 
 @section('content')
-    @component('resources.views.components')
-        @slot('create', route('users.create'))
-        @slot('titulo', 'Usuarios')
+        @slot('create', route('members.create'))
+        @slot('titulo', 'Membros')
         @slot('head')
             <th>Nome</th>
             <th>E-mail</th>
             <th></th>
         @endslot
         @slot('body')
-            @foreach ($members as $member)
+            @foreach ($users as $member)
                 <tr>
                     <td>{{ $member->name }}</td>
                     <td>{{ $member->email }}</td>
@@ -30,5 +29,4 @@
                 </tr>
             @endforeach
         @endslot
-    @endcomponent
 @endsection
