@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('password');
             $table->string('association');
-            $table->boolval('permission');
+            $table->string('permission');
         });
     }
 

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-        @slot('create', route('members.create'))
+        @slot('create', route('users.create'))
         @slot('titulo', 'Membros')
         @slot('head')
             <th>Nome</th>
@@ -9,18 +9,18 @@
             <th></th>
         @endslot
         @slot('body')
-            @foreach ($users as $member)
+            @foreach ($users as $user)
                 <tr>
-                    <td>{{ $member->name }}</td>
-                    <td>{{ $member->email }}</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
                     <td class="options d-flex justify-content-center gap-1">
-                        <a href="{{ route('members.show', $member->id) }}" class="btn btn-dark">
+                        <a href="{{ route('users.show', $user->id) }}" class="btn btn-dark">
                             <i class="fas fa-search"></i>
                         </a>
 
-                        <a href="{{ route('members.edit', $member->id) }}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
    
-                        <form class="form-delete d-inline-block" action="{{ route('members.destroy', $member->id) }}" method="post">
+                        <form class="form-delete d-inline-block" action="{{ route('users.destroy', $user->id) }}" method="post">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>

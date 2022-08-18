@@ -34,12 +34,12 @@ Route::get('/dale', function() {
     return view('dale');
 });
 
-Route::get('/usuarios', [UserController::class,'index'])->name('members.index');
-Route::get('/usuarios/create', [UserController::class,'create'])->name('members.create');
-Route::get('/usuarios/{user}/edit', [UserController::class,'edit'])->name('members.edit');
-Route::get('/usuarios/{user}/show', [UserController::class,'show'])->name('members.show');
-Route::post('/usuarios', [UserController::class,'store'])->name('members.strore');
-Route::put('/usuarios/{user}', [UserController::class,'update'])->name('members.update');
-Route::delete('/usuarios/{user}', [UserController::class,'destroy'])->name('members.destroy');
+Route::get('/usuarios', [UserController::class,'index'])->name('users.index');
+Route::get('/usuarios/create', [UserController::class,'create'])->name('users.create');
+Route::get('/usuarios/{user}/edit', [UserController::class,'edit'])->name('users.edit');
+Route::get('/usuarios/{user}/show', [UserController::class,'show'])->name('users.show');
+Route::post('/usuarios', [UserController::class,'store'])->name('users.strore');
+Route::put('/usuarios/{user}', [UserController::class,'update'])->name('users.update');
+Route::delete('/usuarios/{user}', [UserController::class,'destroy'])->name('users.destroy');
 
 require __DIR__.'/auth.php';
