@@ -14,6 +14,7 @@
                     <td class="d-flex justify-content-end colum-bottons-table">
                         <a href="{{ route('users.show', $user->id) }}" class="btn btn-dark" style=" height:4vh ; width:4vw">
                                 <i class="fas fa-search"></i>
+                                &#8981;
                         </a>
                         <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary" style="height:4vh ; width:4vh"><i class="fas fa-pen"></i></a>
         
