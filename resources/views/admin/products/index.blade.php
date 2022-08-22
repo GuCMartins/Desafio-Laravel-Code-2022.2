@@ -3,7 +3,6 @@
 @section('content')
         <div class="row">   
             <th>Especificações do produto</th>
-            <th>E-mail</th>
             <th></th>
         </div>    
         @foreach ($products as $product)

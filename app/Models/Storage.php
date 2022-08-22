@@ -12,7 +12,7 @@ class Storage extends Model
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $fillable = [
-        'products',
+        'product_id',
         'amount',
         'data',
     ];

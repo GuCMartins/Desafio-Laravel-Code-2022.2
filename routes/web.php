@@ -42,4 +42,13 @@ Route::post('/usuarios', [UserController::class,'store'])->name('users.strore');
 Route::put('/usuarios/{user}', [UserController::class,'update'])->name('users.update');
 Route::delete('/usuarios/{user}', [UserController::class,'destroy'])->name('users.destroy');
 
+Route::get('/produtos', [ProductController::class,'index'])->name('products.index');
+Route::get('/produtos/create', [ProductController::class,'create'])->name('products.create');
+Route::get('/produtos/{product}/edit', [ProductController::class,'edit'])->name('products.edit');
+Route::get('/produtos/{product}/show', [ProductController::class,'show'])->name('products.show');
+Route::post('/produtos', [ProductController::class,'store'])->name('products.strore');
+Route::put('/produtos/{product}', [ProductController::class,'update'])->name('products.update');
+Route::delete('/produtos/{product}', [ProductController::class,'destroy'])->name('products.destroy');
+
+
 require __DIR__.'/auth.php';
