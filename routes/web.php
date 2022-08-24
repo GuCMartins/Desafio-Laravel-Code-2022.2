@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,7 @@ Route::get('/usuarios', [UserController::class,'index'])->name('users.index');
 Route::get('/usuarios/create', [UserController::class,'create'])->name('users.create');
 Route::get('/usuarios/{user}/edit', [UserController::class,'edit'])->name('users.edit');
 Route::get('/usuarios/{user}/show', [UserController::class,'show'])->name('users.show');
-Route::post('/usuarios', [UserController::class,'store'])->name('users.strore');
+Route::post('/usuarios', [UserController::class,'store'])->name('users.store');
 Route::put('/usuarios/{user}', [UserController::class,'update'])->name('users.update');
 Route::delete('/usuarios/{user}', [UserController::class,'destroy'])->name('users.destroy');
 
@@ -46,7 +47,7 @@ Route::get('/produtos', [ProductController::class,'index'])->name('products.inde
 Route::get('/produtos/create', [ProductController::class,'create'])->name('products.create');
 Route::get('/produtos/{product}/edit', [ProductController::class,'edit'])->name('products.edit');
 Route::get('/produtos/{product}/show', [ProductController::class,'show'])->name('products.show');
-Route::post('/produtos', [ProductController::class,'store'])->name('products.strore');
+Route::post('/produtos', [ProductController::class,'store'])->name('products.store');
 Route::put('/produtos/{product}', [ProductController::class,'update'])->name('products.update');
 Route::delete('/produtos/{product}', [ProductController::class,'destroy'])->name('products.destroy');
 

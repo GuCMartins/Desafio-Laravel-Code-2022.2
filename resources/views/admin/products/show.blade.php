@@ -2,5 +2,5 @@
 
 @section('content')
     <td scope="justify-content-center align-items-center">{{ $product->name }},
-        {{ $product->email }},{{ $product->association }},{{ $product->permission  }}</td>
+        {{ $product->flavor }},{{ $product->price }},{{ $product->picture  }}, {{ $product->description  }}</td>
 @endsection

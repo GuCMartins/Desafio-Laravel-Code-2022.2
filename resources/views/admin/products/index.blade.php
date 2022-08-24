@@ -8,16 +8,16 @@
         @foreach ($products as $product)
             <tr>
                 <div class="row d-grid gap-2 d-md-block">
-                    <td scope="justify-content-center align-items-center">{{ $user->name }}</td>
-                    <td class="justify-content-start name-itens-table">{{ $user->email }}</td>
+                    <td scope="justify-content-center align-items-center">{{ $product->name }}</td>
+                    <td class="justify-content-start name-itens-table">{{ $product->price }}</td>
                     <td class="d-flex justify-content-end colum-bottons-table">
-                        <a href="{{ route('users.show', $user->id) }}" class="btn btn-dark" style=" height:4vh ; width:4vw">
+                        <a href="{{ route('products.show', $product->id) }}" class="btn btn-dark" style=" height:4vh ; width:4vw">
                                 <i class="fas fa-search"></i>
                                 &#8981;
                         </a>
-                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary" style="height:4vh ; width:4vh"><i class="fas fa-pen"></i></a>
+                        <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary" style="height:4vh ; width:4vh"><i class="fas fa-pen"></i></a>
         
-                        <form class="form-delete d-flex" action="{{ route('users.destroy', $user->id) }}" method="post">
+                        <form class="form-delete d-flex" action="{{ route('products.destroy', $product->id) }}" method="post">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-danger" style="height:4vh ; width:4vh"><i class="fas fa-trash"></i></button>
