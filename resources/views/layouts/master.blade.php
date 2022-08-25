@@ -10,10 +10,7 @@
 
     <body>
         <div class="container">
-            <h1>Titulo</h1>
-            <ul class="list-group">
-                @yield('content')            
-            </ul>
+            @yield('content')            
         </div>
     </body>
 </html>

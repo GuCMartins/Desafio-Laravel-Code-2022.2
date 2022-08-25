@@ -1,30 +1,30 @@
 @extends('layouts.master')
 
 @section('content')
-        <div class="row justify-content:space-between">   
-            <h1> Produtos </h1>
+        <div class="row justify-content:space-between">
+            <h1>Estoques</h1>   
             <th>Nome</th>
-            <th>Preço</th>
+            <th>Quantidade</th>
             <th></th>
         </div>
         <ul class="list-group">    
-            @foreach ($products as $product)
+            @foreach ($storages as $storage)
                 <tr>
                     <div class="linha w-100">
                         <div class="dados"> 
-                            <td> {{ $product->name }}</td>
+                            <td> {{ $storage->product_id }}</td>
                         </div>
                         <div class="dados"> 
-                            <td> {{ $product->price }}</td>
+                            <td> {{ $storage->amount }}</td>
                         </div>
                         <div class="botoes">
-                            <a href="{{ route('products.show', $product->id) }}" class="btn btn-dark" style=" height:4vh ; width:4vw">
+                            <a href="{{ route('storages.show', $storage->id) }}" class="btn btn-dark" style=" height:4vh ; width:4vw">
                                     <i class="fas fa-search"></i>
                                     &#8981;
                             </a>
-                            <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary" style="height:4vh ; width:4vh"><i class="fas fa-pen"></i></a>
+                            <a href="{{ route('storages.edit', $storage->id) }}" class="btn btn-primary" style="height:4vh ; width:4vh"><i class="fas fa-pen"></i></a>
             
-                            <form class="form-delete d-flex" action="{{ route('products.destroy', $product->id) }}" method="post">
+                            <form class="form-delete d-flex" action="{{ route('storages.destroy', $storage->id) }}" method="post">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger" style="height:4vh ; width:4vh"><i class="fas fa-trash"></i></button>

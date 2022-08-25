@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Storage;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class StorageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('admin.users.index', compact('users'));
+        $storages = Storage::all();
+        return view('admin.storages.index', compact('storages'));
     }
 
     /**
@@ -25,8 +25,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        $user = new User();
-        return view('admin.users.create',compact('user'));
+        $storage = new Storage();
+        return view('admin.storages.create',compact('storage'));
     }
 
     /**
@@ -38,57 +38,57 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        User::create($data);
+        storage::create($data);
 
-        return redirect()->route('users.index')->with('successful',true);
+        return redirect()->route('storages.index')->with('successful',true);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Storage  $storage
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Storage $storage)
     {
-        return view('admin.users.show', compact('user'));
+        return view('admin.storages.show', compact('storage'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Storage  $storage
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Storage $storage)
     {
-        return view('admin.users.edit', compact('user'));
+        return view('admin.storages.edit', compact('storage'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Storage  $storage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Storage $storage)
     {
         $data = $request->all();
-        $user->update($data);
+        $storage->update($data);
 
-        return redirect()->route('users.index')->with('successful',true);
+        return redirect()->route('storages.index')->with('successful',true);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Storage  $storage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Storage $storage)
     {
-        $user->delete();
-        return redirect()->route('users.index')->with('successful',true);
+        $storage->delete();
+        return redirect()->route('storages.index')->with('successful',true);
     }
 }

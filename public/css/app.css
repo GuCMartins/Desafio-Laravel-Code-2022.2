@@ -8325,6 +8325,23 @@ textarea.form-control-lg {
   visibility: hidden !important;
 }
 
+.linha{
+  display: flex;
+  flex-direction: row;
+}
+
+.botoes{
+  display: flex;
+  flex-direction: row;
+  width: 100px; 
+}
+
+.dados{
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+}
+
 @media (min-width: 576px) {
   .float-sm-start {
     float: left !important;
