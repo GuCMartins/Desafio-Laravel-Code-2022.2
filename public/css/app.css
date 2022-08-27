@@ -8328,18 +8328,28 @@ textarea.form-control-lg {
 .linha{
   display: flex;
   flex-direction: row;
+  width: 100%;
+  margin-bottom: 1%;
 }
 
 .botoes{
   display: flex;
   flex-direction: row;
-  width: 100px; 
+  width: fit-content; 
+  align-items: flex-end;
+  margin-left: 1%;
 }
 
 .dados{
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-direction: row;
+}
+
+.descricao{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1%;
 }
 
 @media (min-width: 576px) {
