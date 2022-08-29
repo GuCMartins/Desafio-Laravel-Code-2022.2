@@ -5,7 +5,12 @@
             <h1>Estoques</h1>   
             <th>Nome</th>
             <th>Quantidade</th>
-            <th></th>
+            @can('create',App\Models\User::class)
+                    <a href="{{ route('storages.create') }}" class="btn btn-secondary botoes" style=" height:4vh ; width:5vw; backgroundcolor:green; margin-left:2%">
+                        <i class="fas fa-search"></i>
+                        Adicionar
+                    </a>
+                @endcan    
         </div>
         <ul class="list-group">    
             @foreach ($storages as $storage)

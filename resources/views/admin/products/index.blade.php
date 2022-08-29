@@ -2,7 +2,7 @@
 
 @section('content')
         <div class="row">   
-            <h1> Produtos </h1>
+            <h1>Bombom da Lu - Produtos </h1>
             <div class="descricao">
                 <p>Nome</p>
                 <p>Preço</p>

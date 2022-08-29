@@ -91,4 +91,9 @@ class UserController extends Controller
         $user->delete();
         return redirect()->route('users.index')->with('successful',true);
     }
+
+    public function login(){
+
+        return view('welcome');
+    }
 }

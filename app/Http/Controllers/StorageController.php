@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Storage;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class StorageController extends Controller
@@ -26,7 +27,8 @@ class StorageController extends Controller
     public function create()
     {
         $storage = new Storage();
-        return view('admin.storages.create',compact('storage'));
+        $products = Product::all();
+        return view('admin.storages.create',compact('storage','products'));
     }
 
     /**
