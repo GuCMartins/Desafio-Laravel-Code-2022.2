@@ -41,7 +41,7 @@ Route::get('/usuarios/create', [UserController::class,'create'])->name('users.cr
 Route::get('/usuarios/{user}/edit', [UserController::class,'edit'])->name('users.edit');
 Route::get('/usuarios/{user}/show', [UserController::class,'show'])->name('users.show');
 Route::post('/usuarios', [UserController::class,'store'])->name('users.store');
-Route::put('/usuarios/{user}', [UserController::class,'update'])->name('users.update');
+Route::patch('/usuarios/{user}', [UserController::class,'update'])->name('users.update');
 Route::delete('/usuarios/{user}', [UserController::class,'destroy'])->name('users.destroy');
 
 Route::get('/produtos', [ProductController::class,'index'])->name('products.index');
@@ -49,16 +49,16 @@ Route::get('/produtos/create', [ProductController::class,'create'])->name('produ
 Route::get('/produtos/{product}/edit', [ProductController::class,'edit'])->name('products.edit');
 Route::get('/produtos/{product}/show', [ProductController::class,'show'])->name('products.show');
 Route::post('/produtos', [ProductController::class,'store'])->name('products.store');
-Route::put('/produtos/{product}', [ProductController::class,'update'])->name('products.update');
+Route::patch('/produtos/{product}', [ProductController::class,'update'])->name('products.update');
 Route::delete('/produtos/{product}', [ProductController::class,'destroy'])->name('products.destroy');
 
 Route::get('/estoques', [StorageController::class,'index'])->name('storages.index');
 Route::get('/estoques/create', [StorageController::class,'create'])->name('storages.create');
-Route::get('/estoques/{product}/edit', [StorageController::class,'edit'])->name('storages.edit');
-Route::get('/estoques/{product}/show', [StorageController::class,'show'])->name('storages.show');
+Route::get('/estoques/{storage}/edit', [StorageController::class,'edit'])->name('storages.edit');
+Route::get('/estoques/{storage}/show', [StorageController::class,'show'])->name('storages.show');
 Route::post('/estoques', [StorageController::class,'store'])->name('storages.store');
-Route::put('/estoques/{product}', [StorageController::class,'update'])->name('storages.update');
-Route::delete('/estoques/{product}', [StorageController::class,'destroy'])->name('storages.destroy');
+Route::patch('/estoques/{storage}', [StorageController::class,'update'])->name('storages.update');
+Route::delete('/estoques/{storage}', [StorageController::class,'destroy'])->name('storages.destroy');
 
 
 

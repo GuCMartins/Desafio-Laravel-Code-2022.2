@@ -23,12 +23,12 @@
         <div class="col-12">
             <label for="product_flavor" class="form-label">Sabor do
                 Produto</label>
-            <textarea class="form-control" name="flavor" rows="3" placeholder="Morango, Brigadeiro..."></textarea>
+            <input class="form-control" name="flavor" rows="3" placeholder="Morango, Brigadeiro...">
         </div>
         <div class="col-12">
             <label for="product_descritption" class="form-label">Descrição do
                 Produto</label>
-            <textarea class="form-control" name="description" rows="3" placeholder="Gluten, modo de preparo..."></textarea>
+            <input class="form-control" name="description" rows="3" placeholder="Gluten, modo de preparo...">
         </div>
         <div class="col-12">
             <label for="product_image" class="form-label">Imagem </label>

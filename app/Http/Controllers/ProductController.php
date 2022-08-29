@@ -60,11 +60,11 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        $edited = Game::findOrFail($product->id);
+        $product = Product::findOrFail($id);
 
-        return view('admin.products.edit', compact('edited'));
+        return view('admin.products.edit', compact('product'));
     }
 
     /**
