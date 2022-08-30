@@ -8347,8 +8347,9 @@ textarea.form-control-lg {
 }
 
 .descricao{
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 43% 46% 11%;
+  grid-template-rows: 1;
   margin-bottom: 1%;
 }
 
