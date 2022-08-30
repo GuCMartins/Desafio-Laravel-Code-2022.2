@@ -30,7 +30,7 @@
                 Produto</label>
             <input class="form-control" name="description" rows="3" placeholder="Gluten, modo de preparo...">
         </div>
-        <div class="col-12">
+        <div class="col-md-8">
             <label for="product_image" class="form-label">Imagem </label>
             <input type="text" name="picture" class="form-control" placeholder="Insira o nome da imagem do produto">
         </div>

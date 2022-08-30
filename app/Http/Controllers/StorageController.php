@@ -16,7 +16,8 @@ class StorageController extends Controller
     public function index()
     {
         $storages = Storage::all();
-        return view('admin.storages.index', compact('storages'));
+        $products = Product::all();
+        return view('admin.storages.index', compact('storages','products'));
     }
 
     /**
@@ -62,9 +63,13 @@ class StorageController extends Controller
      * @param  \App\Models\Storage  $storage
      * @return \Illuminate\Http\Response
      */
-    public function edit(Storage $storage)
+    public function edit($id)
     {
-        return view('admin.storages.edit', compact('storage'));
+        $storage = Storage::findOrFail($id);
+        $prodname = Product::findOrFail($storage->id);
+        $products = Product::all();
+
+        return view('admin.storages.edit', compact('storage','products','prodname'));
     }
 
     /**

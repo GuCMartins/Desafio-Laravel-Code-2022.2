@@ -29,7 +29,7 @@
             <label for="user_descritption" class="form-label">Associação</label>
             <input class="form-control" name="association" rows="3" value="{{$user->association}}">
         </div>
-        <div class="col-12">
+        <div class="col-md-8">
             <label for="user_image" class="form-label">Permissão </label>
             <input type="text" name="permission" class="form-control" value="{{$user->permission}}">
         </div>

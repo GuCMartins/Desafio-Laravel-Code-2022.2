@@ -29,7 +29,7 @@
             <label for="product_descritption" class="form-label">Descrição do Produto</label>
             <input class="form-control" name="description" rows="3" value="{{$product->description}}">
         </div>
-        <div class="col-12">
+        <div class="col-md-8">
             <label for="product_image" class="form-label">Imagem </label>
             <input type="text" name="picture" class="form-control" value="{{$product->picture}}">
         </div>

@@ -10,12 +10,12 @@
             </ul>
         </div><br />
     @endif
-    <form action="{{ route('storages.store') }}" method="post" class="row g-3">
+    <form action="{{ route('storages.update',$storage) }}" method="post" class="row g-3">
         @csrf
         <div class="col-md-8">
             <label for="product_name" class="form-label">Tipo de Produto</label>
             <select name="product_id" id="type_id" class="form-control select2">
-                <option></option>
+                <option value={{$storage->product_id }} selected>{{$prodname->name }}</option>
                 @foreach ($products as $product)
                     <option value={{ $product->id }}>{{ $product->name }}</option>
                 @endforeach
@@ -23,7 +23,7 @@
         </div>
         <div class="col-md-4">
             <label for="storage_amount" class="form-label">Quantidade</label>
-            <input type="text" name="amount" class="form-control" placeholder="R$99,99">
+            <input type="text" name="amount" class="form-control" value="{{$storage->amount}}">
         </div>
         <div class="botoes">
             <a type="button" href="{{ route('products.index') }}" class="btn btn-danger"
