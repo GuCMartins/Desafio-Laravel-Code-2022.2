@@ -7,7 +7,7 @@
             <a href="/" type="button" class="btn btn-primary">Principal</a>
             <a href="{{ route('products.index') }}" type="botton" class="btn btn-success">Produtos</a>
             <a href="{{ route('storages.index') }}" type="botton" class="btn btn-secondary">Estoques</a>
-        </div>    
+        </div>
         <div class="descricao">
             <p>Nome</p>
             <p>E-mail</p>

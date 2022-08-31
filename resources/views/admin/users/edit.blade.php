@@ -22,10 +22,6 @@
             <input type="text" name="email" class="form-control" value="{{$user->email}}">
         </div>
         <div class="col-12">
-            <label for="user_flavor" class="form-label">Senha</label>
-            <input type="text" class="form-control" name="password" rows="3" value="{{$user->password}}">
-        </div>
-        <div class="col-12">
             <label for="user_descritption" class="form-label">Associação</label>
             <input class="form-control" name="association" rows="3" value="{{$user->association}}">
         </div>

@@ -41,7 +41,7 @@ class StorageController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        storage::create($data);
+        Storage::create($data);
 
         return redirect()->route('storages.index')->with('successful',true);
     }
@@ -54,7 +54,8 @@ class StorageController extends Controller
      */
     public function show(Storage $storage)
     {
-        return view('admin.storages.show', compact('storage'));
+        $prodname = Product::findOrFail($storage->id);
+        return view('admin.storages.show', compact('storage','prodname'));
     }
 
     /**

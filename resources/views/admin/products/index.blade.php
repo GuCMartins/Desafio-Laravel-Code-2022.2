@@ -36,20 +36,23 @@
                             <i class="fas fa-search"></i>
                             &#8981;
                         </a>
-                        <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary"
-                            style="height:4vh ; width:4vh"><i class="fas fa-pen"></i>
-                            &#128393;
-                        </a>
-
-                        <form class="form-delete d-flex" action="{{ route('products.destroy', $product->id) }}"
-                            method="post">
-                            @csrf
-                            @method('delete')
-                            <button type="submit" class="btn btn-danger" style="height:4vh ; width:4vh"><i
-                                    class="fas fa-trash"></i>
-                                &#9852;
-                            </button>
-                        </form>
+                        @can('update', App\Models\User::class)
+                            <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary"
+                                style="height:4vh ; width:4vh"><i class="fas fa-pen"></i>
+                                &#128393;
+                            </a>
+                        @endcan    
+                        @can('delete', App\Models\User::class)
+                            <form class="form-delete d-flex" action="{{ route('products.destroy', $product->id) }}"
+                                method="post">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-danger" style="height:4vh ; width:4vh"><i
+                                        class="fas fa-trash"></i>
+                                    &#9852;
+                                </button>
+                            </form>
+                        @endcan    
                     </div>
                 </div>
             </tr>
