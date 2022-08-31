@@ -1,6 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-    <td scope="justify-content-center align-items-center">{{ $prodname->name }},
-        {{ $storage->amount }}</td>
+    <div class="show">
+        <a href="{{ route('storages.index') }}" type="botton" class="btn btn-secondary">Voltar</a>
+        <p>Nome : {{ $prodname->name }}</p>
+        <p>Quantidade : {{ $storage->amount }}</p>
+    </div>        
 @endsection

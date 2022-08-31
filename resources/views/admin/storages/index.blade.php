@@ -13,7 +13,7 @@
             <p>Quantidade</p>
             @can('create', App\Models\User::class)
                 <a href="{{ route('storages.create') }}" class="btn btn-secondary botoes"
-                    style=" height:4vh ; width:5vw; backgroundcolor:green; margin-left:2%">
+                    style=" height:4vh ; width:5vw; backgroundcolor:green">
                     <i class="fas fa-search"></i>
                     Adicionar
                 </a>
@@ -25,7 +25,7 @@
             <tr>
                 <div class="linha w-100">
                     <div class="dados">
-                        <td> {{ $products[$storage->product_id]->name }}</td>
+                        <td> {{ $products[$storage->product_id-1]->name }}</td>
                     </div>
                     <div class="dados">
                         <td> {{ $storage->amount }}</td>

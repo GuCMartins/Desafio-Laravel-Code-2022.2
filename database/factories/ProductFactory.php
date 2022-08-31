@@ -21,7 +21,7 @@ class ProductFactory extends Factory
             'name' => fake()->text(5),
             'flavor' =>  fake()->text(5),
             'price' => rand(1,10),
-            'picture' => 'perfil',
+            'picture' => 'caixas',
             'description' => fake()->text(5),
         ];
     }

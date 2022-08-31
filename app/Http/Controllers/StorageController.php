@@ -52,9 +52,10 @@ class StorageController extends Controller
      * @param  \App\Models\Storage  $storage
      * @return \Illuminate\Http\Response
      */
-    public function show(Storage $storage)
+    public function show($id)
     {
-        $prodname = Product::findOrFail($storage->id);
+        $storage = Storage::findOrFail($id);
+        $prodname = Product::findOrFail($storage->product_id);
         return view('admin.storages.show', compact('storage','prodname'));
     }
 
@@ -67,7 +68,7 @@ class StorageController extends Controller
     public function edit($id)
     {
         $storage = Storage::findOrFail($id);
-        $prodname = Product::findOrFail($storage->id);
+        $prodname = Product::findOrFail($storage->product_id);
         $products = Product::all();
 
         return view('admin.storages.edit', compact('storage','products','prodname'));

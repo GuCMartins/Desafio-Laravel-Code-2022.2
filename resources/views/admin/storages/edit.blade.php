@@ -12,6 +12,7 @@
     @endif
     <form action="{{ route('storages.update',$storage) }}" method="post" class="row g-3">
         @csrf
+        @method('PUT')
         <div class="col-md-8">
             <label for="product_name" class="form-label">Tipo de Produto</label>
             <select name="product_id" id="type_id" class="form-control select2">
@@ -26,10 +27,10 @@
             <input type="text" name="amount" class="form-control" value="{{$storage->amount}}">
         </div>
         <div class="botoes">
-            <a type="button" href="{{ route('products.index') }}" class="btn btn-danger"
+            <a type="button" href="{{ route('storages.index') }}" class="btn btn-danger"
                 style="margin-right: 1%">Cancelar</a>
             <button type="submit" class="btn btn-dark botoes"><i class="fas fa-trash"></i>
-                Adicionar
+                Salvar
             </button>
         </div>
     </form>

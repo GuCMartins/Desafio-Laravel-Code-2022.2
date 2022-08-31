@@ -1,6 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-    <td scope="justify-content-center align-items-center">{{ $user->name }},
-        {{ $user->email }},{{ $user->association }},{{ $user->permission  }}</td>
+    <div class="show">
+        <a href="{{ route('users.index') }}" type="botton" class="btn btn-secondary">Voltar</a>
+        <p>Nome : {{ $user->name }}</p>
+        <p>Sabor : {{ $user->email }}</p>
+        <p>Preço : {{ $user->association }}</p>
+        <p>Descrição : {{ $user->permission }}</p>
+    </div>        
 @endsection

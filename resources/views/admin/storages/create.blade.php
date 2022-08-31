@@ -26,7 +26,7 @@
             <input type="text" name="amount" class="form-control">
         </div>
         <div class="botoes">
-            <a type="button" href="{{ route('products.index') }}" class="btn btn-danger"
+            <a type="button" href="{{ route('storages.index') }}" class="btn btn-danger"
                 style="margin-right: 1%">Cancelar</a>
             <button type="submit" class="btn btn-dark botoes"><i class="fas fa-trash"></i>
                 Adicionar
