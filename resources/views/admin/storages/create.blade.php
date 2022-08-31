@@ -23,7 +23,7 @@
         </div>
         <div class="col-md-4">
             <label for="storage_amount" class="form-label">Quantidade</label>
-            <input type="text" name="amount" class="form-control" placeholder="R$99,99">
+            <input type="text" name="amount" class="form-control">
         </div>
         <div class="botoes">
             <a type="button" href="{{ route('products.index') }}" class="btn btn-danger"
