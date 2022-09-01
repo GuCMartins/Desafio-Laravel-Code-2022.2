@@ -3,7 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Events\MailNewproduct;
+use App\Mail\NotifyMail;
+
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Mail;
+
 
 class ProductController extends Controller
 {
@@ -39,6 +47,22 @@ class ProductController extends Controller
     {
         $data = $request->all();
         Product::create($data);
+        $multiply=0;
+        $event = new MailNewproduct($request->name,$request->flavor,$request->price,$request->description);
+        $users = User::all();
+        foreach( $users as $user){
+            if($user->permission == true){
+                $multiply = $multiply + 1;
+                $email = new NotifyMail
+                ($event->nome,
+                $event->sabor,
+                $event->preco,
+                $event->descricao);
+                $when = now()->addseconds($multiply*10);
+                $email->subject='Novo produto criado';
+                Mail::to($user)->later($when,$email);
+                }
+        }
 
         return redirect()->route('products.index')->with('successful',true);
     }

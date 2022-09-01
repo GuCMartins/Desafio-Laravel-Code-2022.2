@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StorageController;
+use App\Http\Controllers\SendEmailController;
+use \Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,8 +46,6 @@ Route::post('/usuarios', [UserController::class,'store'])->name('users.store');
 Route::put('/usuarios/{user}', [UserController::class,'update'])->name('users.update');
 Route::delete('/usuarios/{user}', [UserController::class,'destroy'])->name('users.destroy');
 
-Route::get('/',[UserController::class,'login'])->name('users.login');
-
 Route::get('/produtos', [ProductController::class,'index'])->name('products.index');
 Route::get('/produtos/create', [ProductController::class,'create'])->name('products.create');
 Route::get('/produtos/{product}/edit', [ProductController::class,'edit'])->name('products.edit');
@@ -62,6 +62,12 @@ Route::post('/estoques', [StorageController::class,'store'])->name('storages.sto
 Route::put('/estoques/{storage}', [StorageController::class,'update'])->name('storages.update');
 Route::delete('/estoques/{storage}', [StorageController::class,'destroy'])->name('storages.destroy');
 
+Route::get('/enviando-email',function (){
+    $email = new NotifyEmail($name,$flavor,$price,$description);
+    $email->subject ='Novo produto criado';
+    Mail::to($user)->send($email);
 
+    return "email sent successfully";
+});
 
 require __DIR__.'/auth.php';

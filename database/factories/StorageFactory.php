@@ -26,7 +26,8 @@ class StorageFactory extends Factory
                 ->create()
             */
             'product_id' => Product::inRandomOrder()->first()->id,
-            'amount'=> rand(0,10),        
+            'amount'=> rand(0,10),
+            'data'=>now(),       
         ];
     }
 }
